@@ -1,5 +1,9 @@
 import mongoose from "mongoose";
-mongoose.connect("mongodb+srv://bhavish:bhavish767@cluster1.7darboo.mongodb.net/?retryWrites=true",{
+import {config} from "dotenv";
+config({
+  path: "./data/config.env",
+});
+mongoose.connect(process.env.MONGO_URI,{
   dbName:"cmsuser"
 }).then((c)=>{console.log(`database connected with ${c.connection.host}`)}).catch((e)=>{console.log(e)})
 //mongodb://127.0.0.1:27017
