@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
-mongoose.connect("mongodb://127.0.0.1:27017",{
+mongoose.connect("mongodb+srv://bhavish:bhavish767@cluster1.7darboo.mongodb.net/?retryWrites=true",{
   dbName:"cmsuser"
-}).then(()=>{console.log("database connected")}).catch((e)=>{console.log(e)})
+}).then((c)=>{console.log(`database connected with ${c.connection.host}`)}).catch((e)=>{console.log(e)})
+//mongodb://127.0.0.1:27017
 export default mongoose
